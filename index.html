@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WRDSB-Room Bookings</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+
+	<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="js/jquery.simpleWeather.min.js" type="text/javascript"></script>
+
+	<script>
+		$(document).ready(function() {
+			getWeather();
+			setInterval(getWeather, 600000);
+		});
+
+		function getWeather() {
+			$.simpleWeather({
+			    location: 'Kitchener, ON',
+			    unit: 'c',
+			    speed: 'km',
+			    success: function(weather) {
+			      html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+			  
+			      $("#weather").html(html);
+			    },
+			    error: function(error) {
+			      $("#weather").html('<p>'+error+'</p>');
+			    }
+		  	});
+		}
+
+		function startTime() {
+		    var d=new Date();
+		    var h=d.getHours();
+		    var m=d.getMinutes();
+		    var monthNames = [ "January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December" ];
+    		var dayName = [ "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+		    m = checkTime(m);
+		    document.getElementById('clock').innerHTML = h+":"+m;
+		    document.getElementById('mDay').innerHTML = dayName[d.getDay()];
+		    document.getElementById('mDate').innerHTML = monthNames[d.getMonth()]+" "+d.getDate()+", "+d.getFullYear();
+		    var t = setTimeout(function(){startTime()},500);
+		}
+
+		function checkTime(i) {
+		    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+		    return i;
+		}
+	</script>
+</head>
+
+<body onload="startTime()">
+	<div class="wrapper">
+		<div class="left-wing col_30">
+			<div class="content-wrapper">
+				<div class="logo text-center">
+					<img src="images/wrdsb_logo.png" class="img" alt="wrdsb logo" />
+				</div>
+				<div class="board-name">Waterloo Region District School Board</div>
+				
+				<div class="container">
+					<div class="float_center">
+						<div class="child">
+							<div class="time" id="clock"></div>
+							<div class="day" id="mDay"></div>
+							<div class="date" id="mDate"></div>
+							<div id="weather"></div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<!--
+		<div class="heading">
+			<h1 class="text-center">Room Bookings</h1>
+		</div>
+		-->
+		<div class="right-wing col_70">
+			<div class="content-wrapper">
+				<div class="event">
+					<div class="title current">Dece Supply Interviews</div>
+					<div class="time">9:00 - 12:00 <span class="room">New Hamburg Room</span></div>
+				</div>
+				<div class="clear"></div>
+				<div class="event">
+					<div class="title upcoming">Fs Lunch and Learn</div>
+					<div class="time">11:30 - 13:00 <span class="room">St. Clements Room</span></div>
+				</div>
+				<div class="clear"></div>
+				<div class="event">
+					<div class="title upcoming">Hr Meeting</div>
+					<div class="time">13:15 - 14:55 <span class="room">Kitchener Room</span></div>
+				</div>
+				<div class="clear"></div>
+				<div class="event">
+					<div class="title upcoming">Dece Supply Interviews</div>
+					<div class="time">9:00 - 12:00 <span class="room">New Hamburg Room</span></div>
+				</div>
+				<div class="clear"></div>
+				<div class="event">
+					<div class="title upcoming">Fs Lunch and Learn</div>
+					<div class="time">11:30 - 13:00 <span class="room">St. Clements Room</span></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

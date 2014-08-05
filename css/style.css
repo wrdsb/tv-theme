@@ -1,0 +1,204 @@
+@import url("reset.css");
+@import url("weather.css");
+
+@font-face
+{
+	font-family: 'Roboto';
+	font-style: normal;
+	src: url('fonts/Roboto-Regular.ttf');
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color:#1A1A1A;
+	color:#ffffff;
+}
+img {
+	vertical-align: middle;
+	border:0;
+}
+.clear {
+	clear:both;
+}
+.text-right {
+	text-align: right;
+}
+.text-left {
+	text-align:left;
+}
+.text-center {
+	text-align: center;
+}
+.wrapper {
+	max-width:1920px;
+	max-height:1080px;
+}
+.content-wrapper {
+	padding:20px;
+	min-height:0px;
+	position:relative;
+}
+.heading {
+	height:120px;
+	width:1303px;
+	margin:0 0 10px 0;
+	/*background-color:#9c4274;*/
+	float:left;
+}
+.heading h1 {
+	font-size:110px;
+}
+.left-wing {
+	/*margin-right:10px;*/
+	/*width:567px;*/
+	height:1080px;
+	/*float:left;*/
+	background-color:#005daa;
+}
+.right-wing {
+	/*margin-top:60px;*/
+	/*width:1243px;*/
+	max-height:1080px;
+	/*float:left;*/
+	/*background-color:#ec663c;*/
+}
+
+.time {
+	font-size:80px;
+	margin-bottom:20px;
+}
+.left-wing .time {
+	text-align: center;
+}
+.day, .date {
+	font-size:50px;
+	line-height:1.2;
+	text-align:center;
+}
+.day {
+	margin-bottom:20px;
+}
+.logo {
+	margin:20px 0;
+}
+.event {
+	margin-bottom:50px;
+	line-height: 1.1;
+}
+.event .title {
+	font-size:70px;
+}
+.event .time {
+	font-size:60px;
+}
+.event .room {
+	font-size:60px;
+	color:#b2b2b2;
+	margin-left:14px;
+}
+.upcoming {
+	color:#669900;
+}
+.current {
+	color:#FFBB33;
+}
+p.weather-city {
+	font-size:30px;
+	line-height:1.1;
+}
+.board-name {
+	display:none;
+}
+#weather {
+	margin-top:40px;
+	margin-bottom:40px;
+}
+/*Responsive Code*/
+.col_30 {
+	width:28%;
+	margin:0 2% 0 0;
+	float:left;
+}
+.col_70 {
+	width:68%;
+	margin:0 2% 0 0;
+	float:left;
+}
+.img {
+	max-width:100%;
+	height:auto;
+}
+
+@media only screen and (max-width:480px) {
+	.col_30, .col_70 {
+		width:100%;
+		float:none;
+	}
+	.left-wing {
+		height:114px;
+	}
+	.left-wing .content-wrapper {
+		padding:8px;
+	}
+	.time, .day, .date, .event .title, .event .time, .event .room, #weather h2 {
+		font-size:16px;
+		
+	}
+	.left-wing .time, .left-wing .day, .left-wing .date, #weather {
+		line-height: 38px;
+		margin:0;
+		display:inline-block;
+	}
+	.child .time, .child .date {
+		margin-right:14px;
+	}
+	.event .title {
+		margin-bottom:8px;
+	}
+	i {
+		font-size:36px;
+	}
+	.logo img {
+		height:55px;
+	}
+	.logo {
+		float:left;
+		margin:0;
+	}
+	#weather h2 {
+		margin:0;
+	}
+	.left-wing {
+		max-height:1080px;
+	}
+	.board-name {
+		display:inline-block;
+		text-align: center;
+		font-weight: bold;
+		line-height:60px;
+		margin-left:4px;
+	}
+	.float_center {
+		float: right;
+
+		position: relative;
+		left: -50%; /* or right 50% */
+		text-align: left;
+	}
+	.float_center > .child {
+		position: relative;
+		left: 50%;
+	}
+	.container {
+		width:100%;
+	}
+	.event .time {
+		text-align:left;
+	}
+	.event {
+		margin-bottom:20px;
+	}
+}
+@media only screen and (max-width:960px) {
+
+}
