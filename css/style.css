@@ -199,6 +199,11 @@ p.weather-city {
 		margin-bottom:20px;
 	}
 }
-@media only screen and (max-width:960px) {
-
+@media only screen and (min-width:481px) and (max-width:768px) {
+	.time, .day, .date, .event .title, .event .time, .event .room, #weather h2 {
+		font-size:22px;
+	}
+	i {
+		font-size:48px;
+	}
 }
